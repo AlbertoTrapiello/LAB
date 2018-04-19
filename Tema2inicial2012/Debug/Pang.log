@@ -1,0 +1,3 @@
+﻿  Pang.cpp
+Pang.obj : warning LNK4075: se omite '/EDITANDCONTINUE' debido a la especificación '/INCREMENTAL:NO'
+  Pang.vcxproj -> C:\Users\Alberto\Desktop\Prácticas_Infor\Tema2inicial2012\.\Debug\Pang.exe
