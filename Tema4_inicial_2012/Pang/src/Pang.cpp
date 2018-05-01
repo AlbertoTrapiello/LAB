@@ -1,5 +1,8 @@
 #include "Mundo.h"
 #include "glut.h"
+#include "Bonus.h"
+#include "Caja.h"
+
 
 Mundo mundo;
 

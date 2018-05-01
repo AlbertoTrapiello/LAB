@@ -1,6 +1,3 @@
-#include "Esfera.h"
-#include "Caja.h"
-
 
 class Mundo
 {
