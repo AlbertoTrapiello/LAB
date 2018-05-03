@@ -1,5 +1,5 @@
 #include "Caja.h"
-
+#include "glut.h"
 
 
 Caja::Caja()
@@ -21,4 +21,12 @@ Caja::Caja()
 
 Caja::~Caja()
 {
+}
+
+void Caja::Dibuja()
+{
+	suelo.Dibuja();
+	techo.Dibuja();
+	pared_izq.Dibuja();
+	pared_dcha.Dibuja();
 }

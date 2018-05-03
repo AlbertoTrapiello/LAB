@@ -1,4 +1,3 @@
-﻿  Caja.cpp
-  Disparo.cpp
-  Generando código...
-  Pang.vcxproj -> C:\Users\Alberto\Desktop\INFOR\LAB\Tema4_inicial_2012\Pang\bin\Pang.exe
+﻿  Bonus.cpp
+c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdlib.h(51): error C2381: 'exit': nueva definición; __declspec(noreturn) o '[[noreturn]]' es diferente
+  c:\users\alberto\desktop\infor\lab\tema4_inicial_2012\pang\lib\glut.h(146): note: vea la declaración de 'exit'

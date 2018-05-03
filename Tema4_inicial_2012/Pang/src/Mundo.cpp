@@ -12,34 +12,46 @@ void Mundo::RotarOjo()
 }
 void Mundo::Dibuja()
 {
-	gluLookAt(x_ojo, y_ojo, z_ojo,  // posicion del ojo
+	gluLookAt(x_ojo, y_ojo, z_ojo,  // position del ojo
 			0.0, 0, 0.0,      // hacia que punto mira  (0,0,0) 
 			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)    
 
-	//aqui es donde hay que poner el codigo de dibujo
-	//dibujo del suelo
-	glDisable(GL_LIGHTING);
-	glBegin(GL_POLYGON);
-		glColor3ub(255,0,0);
-		glVertex3f(-5.0f,0,-5.0f);
-		glVertex3f(-5.0f,0,5.0f);
-		glColor3ub(255,255,0);
-		glVertex3f(5.0f,0,5.0f);	
-		glVertex3f(5.0f,0,-5.0f);
-	glEnd();
-	glEnable(GL_LIGHTING);
+	esfera.Dibuja();
+	caja.Dibuja();
+	personaje.Dibuja();
+	disparo.Dibuja();
+	plataforma.Dibuja();
+	bonus.Dibuja();
 }
 
 void Mundo::Mueve()
 {
-
+	personaje.Mueve(0.025f);
+	esfera.Mueve(0.025f);
+	bonus.Mueve(0.025f);
+	disparo.Mueve(0.025f);
 }
 
 void Mundo::Inicializa()
 {
-	x_ojo=0;
-	y_ojo=10;
-	z_ojo=20;
+	x_ojo = 0;
+	y_ojo = 7.5;
+	z_ojo = 30;
+
+	esfera.position.x = 2;
+	esfera.position.y = 4;
+	esfera.radio = 1.5f;
+	esfera.rojo = 0;
+	esfera.verde = 0;
+	esfera.azul = 255;
+	bonus.position.x = 5.0f;
+	bonus.position.y = 5.0f;
+	disparo.position.x = -5.0f;
+	disparo.position.y = 0.0f;
+	plataforma.limite1.x = -5.0f;
+	plataforma.limite2.x = 5.0f;
+	plataforma.limite1.y = 9.0f;
+	plataforma.limite2.y = 9.0f;
 }
 
 void Mundo::Tecla(unsigned char key)
