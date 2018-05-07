@@ -2,6 +2,7 @@
 #include "Vector2D.h"
 class Esfera
 {
+	friend class Interaccion;
 	unsigned char rojo;
 	unsigned char verde;
 	unsigned char azul;

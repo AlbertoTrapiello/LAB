@@ -1,6 +1,8 @@
 #include "Mundo.h"
 #include "glut.h"
+#include "Interaccion.h"
 #include <math.h>
+
 
 void Mundo::RotarOjo()
 {
@@ -30,6 +32,7 @@ void Mundo::Mueve()
 	esfera.Mueve(0.025f);
 	bonus.Mueve(0.025f);
 	disparo.Mueve(0.025f);
+	Interaccion::rebote(personaje, caja);
 }
 
 void Mundo::Inicializa()
@@ -49,4 +52,17 @@ void Mundo::Inicializa()
 void Mundo::Tecla(unsigned char key)
 {
 
+}
+
+void Mundo::teclaEspecial(unsigned char key)
+{
+	switch (key)
+	{
+	case GLUT_KEY_LEFT:
+		personaje.setVel(-5.0f, 0.0f);
+		break;
+	case GLUT_KEY_RIGHT:
+		personaje.setVel(5.0f, 0.0f);
+		break;
+	}
 }

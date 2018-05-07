@@ -2,6 +2,7 @@
 #include "glut.h"
 
 
+
 Personaje::Personaje()
 {
 	altura = 1.8;
@@ -29,3 +30,10 @@ void Personaje::Mueve(float t)
 	position = position + velocity * t + aceleration * (0.5f*t*t);
 	velocity = velocity + aceleration * t;
 }
+
+void Personaje::setVel(float vx, float vy)
+{
+	velocity.x = vx;
+	velocity.y = vy;
+}
+

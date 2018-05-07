@@ -15,6 +15,31 @@ void Pared::Dibuja()
 	glEnable(GL_LIGHTING);
 }
 
+	//Calculo de distancia de una pared a un punto, adicionalmente
+	//se modifica el valor de un vector direccion opcional que contendrá
+	//el vector unitario saliente que indica la direccion de la
+	//recta más corta entre el punto y la pared.
+	float Pared::distancia(Vector2D punto, Vector2D *direccion)
+	{
+		Vector2D u = (punto - limite1);//vector que va desd el lim1 a punto
+		Vector2D v = (limite2 - limite1).Unitario();//vector de la pared
+		float longitud = (limite1 - limite2).modulo();//longitud de la pared
+		Vector2D dir;
+		float valor = u * v;
+		float distancia = 0;
+		if (valor<0)
+			dir = u;
+		else if (valor>longitud)
+			dir = (punto - limite2);
+		else
+			dir = u - v * valor;
+		distancia = dir.modulo();
+		if (direccion != 0) //si nos dan un vector…
+			*direccion = dir.Unitario();
+		return distancia;
+	}
+
+
 void Pared::setPos(float x1, float y1, float x2, float y2)
 {
 	limite1.x = x1;

@@ -1,7 +1,11 @@
 #pragma once
 #include "Vector2D.h"
+
+
 class Personaje
 {
+	friend class Interaccion;
+
 	float altura;
 	Vector2D position;
 	Vector2D velocity;
@@ -12,5 +16,6 @@ public:
 
 	void Dibuja();
 	void Mueve(float);
+	void setVel(float, float);
 };
 

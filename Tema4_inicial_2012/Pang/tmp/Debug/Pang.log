@@ -1,10 +1,6 @@
-﻿  Bonus.cpp
-  Caja.cpp
-  Disparo.cpp
-  Esfera.cpp
+﻿  Esfera.cpp
+  Interaccion.cpp
   Mundo.cpp
   Pang.cpp
-  Pared.cpp
-  Personaje.cpp
   Generando código...
   Pang.vcxproj -> C:\Users\Alberto\Desktop\INFOR\LAB\Tema4_inicial_2012\Pang\bin\Pang.exe
