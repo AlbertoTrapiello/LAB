@@ -6,8 +6,6 @@
 
 class Mundo
 {
-public: 
-
 	Disparo disparo;
 	Esfera esfera;
 	Personaje personaje;
@@ -15,13 +13,15 @@ public:
 	Bonus bonus;
 	Pared plataforma;
 
+	float x_ojo;
+	float y_ojo;
+	float z_ojo;
+public: 
 	void Tecla(unsigned char key);
 	void Inicializa();
 	void RotarOjo();
 	void Mueve();
 	void Dibuja();
 
-	float x_ojo;
-	float y_ojo;
-	float z_ojo;
+
 };

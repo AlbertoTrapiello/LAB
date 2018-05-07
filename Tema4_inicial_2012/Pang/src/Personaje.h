@@ -2,14 +2,14 @@
 #include "Vector2D.h"
 class Personaje
 {
-public:
-	Personaje();
-	~Personaje();
-
 	float altura;
 	Vector2D position;
 	Vector2D velocity;
 	Vector2D aceleration;
+public:
+	Personaje();
+	~Personaje();
+
 	void Dibuja();
 	void Mueve(float);
 };

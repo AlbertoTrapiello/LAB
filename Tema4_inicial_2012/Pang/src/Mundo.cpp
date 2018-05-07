@@ -34,24 +34,16 @@ void Mundo::Mueve()
 
 void Mundo::Inicializa()
 {
-	x_ojo = 0;
-	y_ojo = 7.5;
-	z_ojo = 30;
+		x_ojo = 0;
+		y_ojo = 7.5;
+		z_ojo = 50;
 
-	esfera.position.x = 2;
-	esfera.position.y = 4;
-	esfera.radio = 1.5f;
-	esfera.rojo = 0;
-	esfera.verde = 0;
-	esfera.azul = 255;
-	bonus.position.x = 5.0f;
-	bonus.position.y = 5.0f;
-	disparo.position.x = -5.0f;
-	disparo.position.y = 0.0f;
-	plataforma.limite1.x = -5.0f;
-	plataforma.limite2.x = 5.0f;
-	plataforma.limite1.y = 9.0f;
-	plataforma.limite2.y = 9.0f;
+		esfera.setColor(0, 0, 255);
+		esfera.setRadio(1.5f);
+		esfera.setPos(2, 4);
+		bonus.setPos(5.0f, 5.0f);
+		disparo.setPos(-5.0f, 0.0f);
+		plataforma.setPos(-5.0f, 9.0f, 5.0f, 9.0f);
 }
 
 void Mundo::Tecla(unsigned char key)

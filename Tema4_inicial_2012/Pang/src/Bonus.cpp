@@ -1,6 +1,6 @@
 #include "Bonus.h"
 #include "glut.h"
-#include <stdlib.h>
+//#include <cstdlib>
 
 Bonus::Bonus()
 {
@@ -16,8 +16,9 @@ void Bonus::Dibuja()
 		glPushMatrix();
 		glTranslatef(position.x, position.y, 0);
 		glRotatef(30, 1, 1, 1);
-		glColor3f(rand() / (float)RAND_MAX, rand() / (float)RAND_MAX,
-			rand() / (float)RAND_MAX);//color aleatorio
+	/*	glColor3f(rand() / (float)RAND_MAX, rand() / (float)RAND_MAX,
+			rand() / (float)RAND_MAX);//color aleatorio*/
+		glColor3f(255, 255, 255);
 		glutSolidCube(lado);
 		glPopMatrix();
 	
@@ -25,9 +26,13 @@ void Bonus::Dibuja()
 
 void Bonus::Mueve(float t)
 {
-	position.x = position.x + velocity.x*t + 0.5f*aceleration.x*t*t;
-	position.y = position.y + velocity.y*t + 0.5f*aceleration.y*t*t;
-	velocity.x = velocity.x + aceleration.x*t;
-	velocity.y = velocity.y + aceleration.y*t;
+	position = position + velocity * t + aceleration * (0.5f*t*t);
+	velocity = velocity + aceleration * t;
+}
+
+void Bonus::setPos(float ix, float iy)
+{
+	position.x = ix;
+	position.y = iy;
 }
 

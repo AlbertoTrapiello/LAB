@@ -26,8 +26,24 @@ void Esfera::Dibuja()
 
 void Esfera::Mueve(float t)
 {
-	position.x = position.x + velocity.x*t + 0.5f*aceleration.x*t*t;
-	position.y = position.y + velocity.y*t + 0.5f*aceleration.y*t*t;
-	velocity.x = velocity.x + aceleration.x*t;
-	velocity.y = velocity.y + aceleration.y*t;
+	position = position + velocity * t + aceleration * (0.5f*t*t);
+	velocity = velocity + aceleration * t;
+}
+
+void Esfera::setPos(float ix, float iy)
+{
+	position.x = ix;
+	position.y = iy;
+}
+
+void Esfera::setColor(unsigned char r, unsigned char a , unsigned char v)
+{
+	rojo = r;
+	azul = a;
+	verde = v;
+}
+
+void Esfera::setRadio(float radio)
+{
+	this->radio = radio;
 }
