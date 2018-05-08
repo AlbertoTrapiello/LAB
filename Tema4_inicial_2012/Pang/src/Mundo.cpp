@@ -44,8 +44,8 @@ void Mundo::Mueve()
 
 void Mundo::Inicializa()
 {
-	x_ojo = 0; y_ojo = 20;
-	z_ojo = 45;
+	x_ojo = 0; y_ojo = 10;
+	z_ojo = 50;
 	esfera.setColor(255, 0, 0);
 	esfera.setRadio(1.5f);
 	esfera.setPos(2, 4);
