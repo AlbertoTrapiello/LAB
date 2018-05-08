@@ -1,19 +1,20 @@
 #include "Interaccion.h"
+#include <iostream>
 
-
+using namespace std;
 
 void Interaccion::rebote(Personaje & p, Caja c)
 {
 	float xmax = c.suelo.limite2.x;
 	float xmin = c.suelo.limite1.x;
-	if (e.position.x>xmax)e.position.x = xmax;
-	if (e.position.x<xmin)e.position.x = xmin;
+	if (p.position.x>xmax)p.position.x = xmax;
+	if (p.position.x<xmin)p.position.x = xmin;
 }
 
 bool Interaccion::rebote(Esfera & e, Pared p)
 {
 	Vector2D dir;
-	float dif = e.distancia(e.position, &dir) - e.radio;
+	float dif = p.distancia(e.position, &dir) - e.radio;
 	if (dif <= 0.0f)
 	{
 		Vector2D v_inicial = e.velocity;
@@ -26,18 +27,28 @@ bool Interaccion::rebote(Esfera & e, Pared p)
 
 void Interaccion::rebote(Esfera & e, Caja c)
 {
-/*	float xmax = c.suelo.limite2.x;
-	float xmin = c.suelo.limite1.x;
-	if (e.position.x>xmax)e.position.x = xmax;
-	if (e.position.x<xmin)e.position.x = xmin;
-	float ymax = c.suelo.limite2.y;
-	float ymin = c.suelo.limite1.y;
-	if (e.position.y>ymax)e.position.y = ymax;
-	if (e.position.y<ymin)e.position.y = ymin;*/
+
+	if ((c.pared_dcha.distancia(e.position) <= e.radio) || (c.pared_izq.distancia(e.position) <= e.radio))
+	{
+
+		e.velocity.x = e.velocity.x * -1;
+
+	}
+	if ((c.suelo.distancia(e.position) <= e.radio) || (c.techo.distancia(e.position) <= e.radio))
+	{
+		e.velocity.y = e.velocity.y * -1;
+	}
+
 }
 
-Interaccion::Interaccion()
+void Interaccion::rebote(Esfera & e, Esfera & e2)
 {
+	if (e.distancia(e2) <= 0)
+	{
+		e.velocity = e.velocity*-1;
+		e2.velocity = e2.velocity*-1;
+	}
 
 }
+
 

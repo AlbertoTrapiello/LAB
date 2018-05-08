@@ -1,6 +1,6 @@
 #include "Esfera.h"
 #include "glut.h"
-
+#include <math.h>
 
 Esfera::Esfera()
 {
@@ -8,7 +8,8 @@ Esfera::Esfera()
 	rojo = verde = azul = 255; //blanco
 	radio = 1.0f;
 	aceleration.y = -9.8f;
-
+	velocity.x = 5;
+	velocity.y = 20;
 }
 
 
@@ -46,4 +47,20 @@ void Esfera::setColor(unsigned char r, unsigned char a , unsigned char v)
 void Esfera::setRadio(float radio)
 {
 	this->radio = radio;
+}
+
+void Esfera::setVel(float ix, float iy)
+{
+	velocity.x = ix;
+	velocity.y = iy;
+}
+
+float Esfera::distancia(Esfera & e)
+{
+	float distancia;
+	float ix = (e.position.x -this->position.x);
+	float iy = (e.position.y - this->position.y);
+	distancia = sqrt(ix*ix + iy * iy)-e.radio-this->radio;
+
+	return distancia;
 }

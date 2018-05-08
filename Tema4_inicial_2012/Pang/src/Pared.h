@@ -13,6 +13,7 @@ class Pared
 	Vector2D limite2;
 public:
 
+	Pared();
 	void setPos(float x1, float y1, float x2, float y2);
 	void setColor(unsigned char, unsigned char, unsigned char);
 	void Dibuja();

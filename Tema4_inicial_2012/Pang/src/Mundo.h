@@ -5,9 +5,10 @@
 #include "Disparo.h" 
 
 class Mundo
-{
+{	
 	Disparo disparo;
 	Esfera esfera;
+	Esfera esfera2;
 	Personaje personaje;
 	Caja caja;
 	Bonus bonus;

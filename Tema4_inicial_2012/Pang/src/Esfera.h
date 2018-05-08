@@ -19,5 +19,8 @@ public:
 	void setPos(float ix, float iy);
 	void setColor(unsigned char, unsigned char, unsigned char);
 	void setRadio(float radio);
+	void setVel(float ix, float iy);
+	float distancia(Esfera &e);
+
 };
 

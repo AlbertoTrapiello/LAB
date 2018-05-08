@@ -2,6 +2,11 @@
 #include "glut.h"
 
 
+Pared::Pared()
+{
+	this->setColor(255, 255, 255);
+}
+
 void Pared::Dibuja()
 {
 	glDisable(GL_LIGHTING);
