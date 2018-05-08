@@ -1,0 +1,12 @@
+PELOTA 2 	9 	-5 	5 	1	AZUL
+PELOTA -2 	10 	-5 	5 	1 	AMARILLO
+
+NUM_PLATAFORMAS 1
+-5 5 10 3
+
+
+
+
+
+
+
