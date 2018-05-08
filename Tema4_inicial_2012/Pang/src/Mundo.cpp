@@ -36,7 +36,8 @@ void Mundo::Mueve()
 	disparo.Mueve(0.025f);
 	Interaccion::rebote(personaje, caja);
 	Interaccion::rebote(esfera, caja);
-	Interaccion::rebote(esfera, plataforma);	Interaccion::rebote(esfera2, caja);
+	Interaccion::rebote(esfera, plataforma);
+	Interaccion::rebote(esfera2, caja);
 	Interaccion::rebote(esfera2, plataforma);
 	Interaccion::rebote(esfera, esfera2);
 }
