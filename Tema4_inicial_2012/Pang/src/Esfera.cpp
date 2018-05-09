@@ -12,6 +12,18 @@ Esfera::Esfera()
 	velocity.y = 20;
 }
 
+Esfera::Esfera(float rad, float x, float y, float vx, float vy)
+{
+	radio = rad;
+	position.x = x;
+	position.y = y;
+	velocity.x = vx;
+	velocity.y = vy;
+	rojo = verde = 255;
+	azul = 100; //color distinto
+	aceleration.y = -9.8;
+}
+
 
 Esfera::~Esfera()
 {
@@ -58,7 +70,7 @@ void Esfera::setVel(float ix, float iy)
 float Esfera::distancia(Esfera & e)
 {
 	float distancia;
-	float ix = (e.position.x -this->position.x);
+	float ix = (e.position.x - this->position.x);
 	float iy = (e.position.y - this->position.y);
 	distancia = sqrt(ix*ix + iy * iy)-e.radio-this->radio;
 

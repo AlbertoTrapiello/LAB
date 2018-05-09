@@ -28,17 +28,24 @@ bool Interaccion::rebote(Esfera & e, Pared p)
 void Interaccion::rebote(Esfera & e, Caja c)
 {
 
-	if ((c.pared_dcha.distancia(e.position) <= e.radio) || (c.pared_izq.distancia(e.position) <= e.radio))
+	if (c.pared_dcha.distancia(e.position) <= e.radio)
 	{
-
-		e.velocity.x = e.velocity.x * -1;
+		Interaccion::rebote(e, c.pared_dcha);
 
 	}
-	if ((c.suelo.distancia(e.position) <= e.radio) || (c.techo.distancia(e.position) <= e.radio))
+	if (c.pared_izq.distancia(e.position) <= e.radio)
 	{
-		e.velocity.y = e.velocity.y * -1;
-	}
+		Interaccion::rebote(e, c.pared_izq);
 
+	}
+	if (c.suelo.distancia(e.position) <= e.radio)
+	{
+		Interaccion::rebote(e, c.suelo);
+	}
+	if (c.techo.distancia(e.position) <= e.radio)
+	{
+		Interaccion::rebote(e, c.techo);
+	}
 }
 
 void Interaccion::rebote(Esfera & e, Esfera & e2)

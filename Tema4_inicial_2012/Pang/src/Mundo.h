@@ -3,6 +3,9 @@
 #include "Esfera.h"
 #include "Bonus.h"
 #include "Disparo.h" 
+#include "ListaEsferas.h"
+
+
 
 class Mundo
 {	
@@ -13,7 +16,8 @@ class Mundo
 	Caja caja;
 	Bonus bonus;
 	Pared plataforma;
-
+	ListaEsferas esferas;
+	
 	float x_ojo;
 	float y_ojo;
 	float z_ojo;

@@ -3,6 +3,7 @@
 class Esfera
 {
 	friend class Interaccion;
+
 	unsigned char rojo;
 	unsigned char verde;
 	unsigned char azul;
@@ -10,8 +11,10 @@ class Esfera
 	Vector2D position;
 	Vector2D velocity;
 	Vector2D aceleration;
+
 public:
 	Esfera();
+	Esfera(float rad, float x = 0.0f, float y = 0.0f, float vx = 0.0f, float vy = 0.0f);
 	~Esfera();
 
 	void Dibuja();
